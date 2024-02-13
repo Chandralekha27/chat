@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mooli&family=Rubik:wght@300&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="main-div">
+        <div class="sub-bar">
+            <div onmouseenter="startanimation(this)" onmouseleave="stopanimation(this)" class="side-bar">
+                <div class="side-bar-contents" id="chat"></div>
+                <div class="side-bar-contents"id="appointment" ></div>
+                <div class="side-bar-contents"id="medicine"></div>
+            </div>
+            <div class="main-dashboard">
+                <div class="chat-nav">
+                    <div class="chat-user-icon"></div>
+                    <p class="chat-name">Dr.Shivesh</p>
+                    <div class="online-status-container">
+                        <div class="online-status"></div>
+                        <div class="online-text">Online</div>
+                    </div>
+                </div>
+                <div class="message-container">
+                    <!-- Replies appear here -->
+                    <div id="chat-container"></div>
+                    <input class="message-input" type="text" id="chat-input" placeholder="type here">
+
+                  <div class="message-send-button"></div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+</body>
+</html>
