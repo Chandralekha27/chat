@@ -3,41 +3,52 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chat app</title>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mooli&family=Rubik:wght@300&display=swap" rel="stylesheet">
+  <title>Your Website Title</title>
   <style>
-    body {
-      font-family:consolas;
+  body {
+    font-family: 'Rubik', sans-serif;
       margin: 0;
       display: flex;
       align-items: center;
       justify-content: center;
       height: 100vh;
-      background-color: #ffcccc; /* Light red background color */
+      background-color: #232149; /* Light red background color */
     }
 
     .container {
       width: 500px;
-      height: 300px;
+      height: fit-content;
+      padding: 30px;
       background-color: white; /* Set the content background color */
       border-radius: 15px; /* Rounded borders */
       padding: 20px; /* Add padding to the content */
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+      margin-left:40px;
+      margin-right:40px;
+      padding-bottom:30px;
+
     }
 
     .login-form {
+      font-family: 'Rubik', sans-serif;
       display: flex;
       flex-direction: column;
       align-items: center;
+      margin-left:40px;
+      margin-right:40px;
     }
 
     .login-input {
-
-      font-family:consolas;
+     
+      font-family: 'Rubik', sans-serif;
       width: 100%;
       padding: 10px;
       margin: 10px 0;
       border: 1px solid #ccc; /* Border color */
-      border-radius: 5px; /* Rounded borders for input */
+      border-radius: 5px; 
       align-items:center;
     }
 
@@ -45,21 +56,27 @@
       display:flex;
       justify-content:center;
       align-items:center;
-      margin-left:100px;
       margin-top:30px;
-      width: 50%;
+      width: 45%;
       padding: 10px;
-      background-color: #4CAF50; /* Green button color */
+      background-color: #232149; /* Green button color */
       color: white;
       border: none;
       border-radius: 5px; /* Rounded borders for button */
       cursor: pointer;
     }
-
+    .login-button :hover{
+        transform: scale(1.5);
+    }
     #show-password{
       font-size:12px;
       display:flex;
       align-items:center;
+    }
+    .login-button-container{
+      display:flex;
+      flex-direction: row;
+      justify-content: space-around;
     }
   </style>
 </head>
@@ -70,9 +87,17 @@
       <form action="#" method="post">
         <input type="text" class="login-input" placeholder="Username" required>
         <input type="password" class="login-input" id="passwordInput" placeholder="Password" required>
-        <div id="show-password"><input type="checkbox" id="showPassword">show password</div>
-        <button type="submit" class="login-button">Login</button>
+        <div  placeholder="Email" id="inputContainer"></div>
+        <div id="show-password">
+            <input type="checkbox" id="showPassword">
+            <label for="showPassword">Show password</label>
+          </div>
+        <div class="login-button-container">
+          <button type="submit" class="login-button">Login</button>
+          <button type="submit" id="toggleInput" class="login-button">Sign up</button>
+        </div>
       </form>
+      
     </div>
   </div>
   <script>
@@ -82,6 +107,34 @@
     showPasswordCheckbox.addEventListener('change', () => {
       passwordInput.type = showPasswordCheckbox.checked ? 'text' : 'password';
     });
+    const toggleInputButton = document.getElementById("toggleInput");
+    const inputContainer = document.getElementById("inputContainer");
+    let inputExists = false; // Flag to track if input field exists
+    
+    // Function to toggle creation/deletion of input field
+    function toggleInputField() {
+      if (!inputExists) {
+        const newInput = document.createElement("input");
+        newInput.type = "email";
+        newInput.style.fontFamily = "Rubik";
+        newInput.style.width = "100%";
+        newInput.style.padding = "10px";
+        newInput.style.margin = "10px 0";
+        newInput.style.border = "1px solid #ccc";
+        newInput.style.borderRadius = "5px";
+        newInput.style.alignItems = "center";
+        newInput.placeholder = "Email";
+    
+        inputContainer.appendChild(newInput);
+        inputExists = true;
+    
+        // Remove event listener from the toggleInputButton
+        toggleInputButton.removeEventListener("click", toggleInputField);
+      }
+    }
+    
+    toggleInputButton.onclick = toggleInputField;
+    
   </script>
 </body>
 </html pull origintml>
