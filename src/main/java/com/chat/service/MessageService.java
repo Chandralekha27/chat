@@ -3,9 +3,10 @@ package com.chat.service;
 import com.chat.model.dto.MessageRequest;
 import com.chat.repository.MessageRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import static com.chat.util.builder.MessageDtoMapper.messageBuilder;
-
+@Service
 public class MessageService {
 
     @Autowired

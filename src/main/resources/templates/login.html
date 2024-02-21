@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mooli&family=Rubik:wght@300&display=swap" rel="stylesheet">
+  <title>Your Website Title</title>
+  <link rel="stylesheet" th:href="@{/css/login.css}">
+
+</head>
+<body>
+<div class="container">
+  <div class="login-form">
+    <h2>L O G I N</h2>
+
+    <div class="login-button-container" id="social-login">
+
+      <button type="submit" class="login-button direct-login"></button>
+      <button type="submit"  class="login-button direct-login"></button>
+
+    </div>
+
+    <div class="socials-line"> </div>
+    <form onsubmit="login(event)">
+      <div placeholder="Email" id="inputContainer"></div>
+      <input type="text" class="login-input" id = "Username" placeholder="Username" required>
+      <input type="password" class="login-input" id="passwordInput" placeholder="Password" required>
+      <div id="show-password">
+        <input type="checkbox" id="showPassword" onchange="passwordCheckbox(event)">
+        <label for="showPassword">Show password</label>
+      </div>
+      <div class="login-button-container">
+        <button type="submit" id="toggleInput" class="login-button" onclick="toggleInputField(event)">Sign up</button>
+        <button type="submit" class="login-button" id="login-button">Login</button>
+      </div>
+    </form>
+  </div>
+  </form>
+</div>
+</div>
+
+<script th:src="@{/js/login.js}"></script>
+
+</body>
+</html>

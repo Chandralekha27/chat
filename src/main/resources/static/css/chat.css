@@ -279,9 +279,7 @@ border-radius: 50%;
     .message-container{
         overflow-y: scroll;
     }
-    .messsage-input-container{
-        padding-bottom: 200px;
-    }
+
     
     #chat-container {
         height: min-content;

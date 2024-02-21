@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mooli&family=Rubik:wght@300&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <script src="app.js"></script>
+    <link rel="stylesheet" th:href="@{/css/chat.css}">
+    <script th:src="@{/js/chat.js}"></script>
     <title>Document</title>
 </head>
 <body>
@@ -34,7 +34,7 @@
                     
                     <div class="messsage-input-container">
                     <input class="message-input" type="text" id="chat-input" placeholder="Type here">
-                    <button class="message-send-button" onclick="sendMessage()">-></button></div>
+                    <button class="message-send-button" onclick="sendMessage()">⇒</button></div>
                     </div>  </div>
                 </div>
                 </div>

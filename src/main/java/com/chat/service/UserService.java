@@ -39,7 +39,6 @@ public class UserService {
         if(!user.getPassword().equals(existingUser.get().getPassword())){
             throw new UserCredentialsIncorrectException(incorrectCredentials);
         }
-
         return existingUser.get();
     }
 

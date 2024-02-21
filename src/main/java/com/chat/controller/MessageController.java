@@ -5,10 +5,7 @@ import com.chat.service.MessageService;
 import com.chat.util.Exception.UserNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/message")
@@ -25,6 +22,11 @@ public class MessageController {
         }catch (UserNotFoundException e){
             return ResponseEntity.notFound().build();
         }
+    }
+
+    @GetMapping("/all")
+    public ResponseEntity allMessages(){
+        return ResponseEntity.ok().build();
     }
 
 }
